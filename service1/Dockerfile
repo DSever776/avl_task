@@ -3,10 +3,10 @@ FROM python:3.9
 
 WORKDIR /app
 
-COPY ./s1/requirements.txt .
+COPY ./service1/requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-COPY ./s1/service1.py .
+COPY ./service1/service1.py .
 
 EXPOSE 8000
 
