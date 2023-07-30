@@ -1,0 +1,46 @@
+pipeline {
+    agent any
+    stages{
+        stage ("Build-images"){
+            steps{
+                sh "echo 'Building docker images'"
+                sh "docker-compose build"              
+                
+            }
+        }
+
+        stage ("Integration-test"){
+            steps{
+                sh "echo 'Integration test stage'"                
+                
+            }
+        }
+
+        stage ("Unit-test"){
+            steps{
+                sh "echo 'Unit-test stage'"                             
+                
+            }
+        }
+
+        stage ("Tag-images"){
+            steps{
+                sh "echo 'Taging docker iamges'"
+                sh "docker tag service1:latest dom776/service1:v1.0"
+                sh "docker tag service2:latest dom776/service2:v1.0"              
+                
+                
+            }
+        }
+
+        stage ("Publish-images"){
+            steps{
+                sh "echo 'Publishing docker images'"
+                sh "docker push dom776/service1:v1.0"
+                sh "docker push dom776/service2:v1.0"
+                
+                
+            }
+        }
+    }
+}
