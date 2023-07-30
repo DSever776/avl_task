@@ -36,8 +36,8 @@ pipeline {
                 withCredentials([usernamePassword(credentialsId: '38b31444-6d8b-4a06-82df-84307bccab51', usernameVariable: 'dom776', passwordVariable: 'dockerHubPswd')]) {
                     sh "docker login -u dom776 -p ${dockerHubPswd}"
                     sh "echo 'Publishing docker images'"
-                    sh "docker push dom776/service1:v1.0"
-                    sh "docker push dom776/service2:v1.0"
+                    sh "docker push dom776/service1:v1.0-${BUILD_NUMBER}"
+                    sh "docker push dom776/service2:v1.0-${BUILD_NUMBER}"
                 }
             }
         }
