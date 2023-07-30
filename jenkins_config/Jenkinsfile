@@ -39,7 +39,6 @@ pipeline {
                 sh "docker push dom776/service1:v1.0"
                 sh "docker push dom776/service2:v1.0"
                 
-                
             }
         }
     }
