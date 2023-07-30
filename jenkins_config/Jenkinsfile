@@ -25,7 +25,7 @@ pipeline {
 
         stage ("Tag-images"){
             steps{    
-                withCredentials([string(credentialsId: '38b31444-6d8b-4a06-82df-84307bccab51', variable: 'dockerHubPswd')]) {
+                withCredentials([string(credentialsId: 'dom776', variable: 'dockerHubPswd')]) {
                     sh "docker login -u dom776 -p ${dockerHubPswd}"
                     sh "docker push ezmamig/avl_backend:v1.0"
                     sh "docker push ezmamig/avl_client:v1.0"
