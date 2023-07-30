@@ -5,7 +5,7 @@ services:
     build:
       context: .
       dockerfile: ./service1/Dockerfile
-    image: service1:${TAG:-latest}
+    image: service1:${TAG1:-latest}
     container_name: service1
     ports:
       - "8000:8000"
@@ -13,7 +13,7 @@ services:
     build:
       context: .
       dockerfile: ./service2/Dockerfile
-    image: service2:${TAG:-latest}
+    image: service2:${TAG2:-latest}
     container_name: service2
     ports:
       - "8001:8001"
