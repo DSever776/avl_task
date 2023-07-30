@@ -26,8 +26,8 @@ pipeline {
         stage ("Tag-images"){
             steps{    
                 sh "echo 'Taging docker iamges'"
-                sh "docker tag service1:latest dom776/service1:v1.0"
-                sh "docker tag service2:latest dom776/service2:v1.0"        
+                sh "docker tag service1:latest dom776/service1:v1.0-${BUILD_NUMBER}"
+                sh "docker tag service2:latest dom776/service2:v1.0-${BUILD_NUMBER}"        
             }
         }
 
